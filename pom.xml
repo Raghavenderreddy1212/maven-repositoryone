@@ -15,11 +15,36 @@
 		<mule.version>3.8.3</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
     		<amversion>5.14.5</amversion>
-    	
+    	<uid>raghavenderreddy1212</uid>
+    	<pwd>junk</pwd>
 	</properties>
 
 	<build>
 		<plugins>
+		
+		            <plugin>
+                <groupId>org.mule.tools.maven</groupId>
+                <artifactId>mule-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <deploymentType>cloudhub</deploymentType>
+                    <muleVersion>${mule.version}</muleVersion>
+                    <username>${uid}</username>
+                    <password>${pwd}</password>
+                    <workerType>Micro</workerType>
+                    <redeploy>true</redeploy>
+                    <environment>Production</environment>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-app-maven-plugin</artifactId>
