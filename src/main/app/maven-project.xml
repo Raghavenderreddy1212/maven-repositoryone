@@ -17,7 +17,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <db:derby-config name="Derby_Configuration" url="jdbc:derby:memory:muleEmbeddedDB;create=true" doc:name="Derby Configuration"/>
     <flow name="maven-projectFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/sample" doc:name="HTTP"/>
-        <set-payload value="#[&quot;HELLO&quot;]" doc:name="Set Payload"/>
+        <set-payload value="#[&quot;hello&quot;]" doc:name="Set Payload"/>
     </flow>
     <flow name="flights">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/flights" doc:name="HTTP"/>
