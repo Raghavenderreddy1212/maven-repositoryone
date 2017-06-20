@@ -14,7 +14,7 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
 http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
 	<http:listener-config name="HTTP_Listener_Configuration"
-		host="0.0.0.0" port="${http.port}" doc:name="HTTP Listener Configuration" />
+		host="0.0.0.0" port="8083" doc:name="HTTP Listener Configuration" />
 	<spring:beans>
 		<spring:bean id="Bean" name="Bean"
 			class="com.mulesoft.training.Database" />
@@ -26,7 +26,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 	<flow name="maven-projectFlow">
 		<http:listener config-ref="HTTP_Listener_Configuration"
 			path="/sample" doc:name="HTTP" />
-		<set-payload value="#[&quot;hello&quot;]" doc:name="Set Payload" />
+		<set-payload value="#[&quot;Hello&quot;]" doc:name="Set Payload" />
 	</flow>
 	<flow name="flights">
 		<http:listener config-ref="HTTP_Listener_Configuration"
