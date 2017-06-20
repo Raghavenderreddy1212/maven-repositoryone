@@ -14,6 +14,8 @@
 
 		<mule.version>3.8.3</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
+    		<amversion>5.14.5</amversion>
+    	
 	</properties>
 
 	<build>
@@ -160,7 +162,7 @@
     <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
-            <version>5.14.5</version>
+            <version>${amversion}</version>
         </dependency>
     </dependencies>
 
